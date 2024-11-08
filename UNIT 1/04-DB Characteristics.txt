@@ -1,0 +1,18 @@
+Database Characteristics
+A database is designed to store data in a structured way, making it easy to manage, retrieve, and update. Here are some key characteristics that define a database:
+
+Data Integrity and Accuracy: Databases ensure that the data remains accurate and consistent through constraints and rules.
+
+Example: If a customer's age cannot be negative, the database will enforce this rule.
+Data Security: Only authorized users can access or modify the data.
+
+Example: In a university database, only admins can update student grades, ensuring security.
+Data Independence: Changes in the data storage structure don’t affect how data is accessed.
+
+Example: If the way customer data is stored internally changes, the way it’s accessed by users remains the same.
+Minimized Data Redundancy: A database stores data only once and reuses it across multiple applications.
+
+Example: Customer information is stored in one place, preventing multiple copies across systems.
+Efficient Data Access: Databases use indexing and other techniques to retrieve data quickly.
+
+Example: Using an index on the "Product ID" field in a product database enables faster searches.

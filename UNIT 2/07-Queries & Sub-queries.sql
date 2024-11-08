@@ -51,7 +51,7 @@ FROM employees e1
 WHERE salary > (SELECT AVG(salary) FROM employees e2 WHERE e1.department = e2.department);
 
 
-This query finds employees whose salary is above the average salary in their specific department.
+-- This query finds employees whose salary is above the average salary in their specific department.
 
 
 

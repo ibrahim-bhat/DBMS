@@ -23,7 +23,7 @@ ADD date_of_joining DATE;
 
 DROP TABLE employees;
 
-TRUNCATE TABLE employees;
+TRUNCATE TABLE employees; --delete the data but not the table
 
 
     -- DCL
