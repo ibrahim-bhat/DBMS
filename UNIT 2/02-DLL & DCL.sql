@@ -18,8 +18,7 @@ CREATE TABLE employees (
     salary DECIMAL(10, 2)
 );
 
-ALTER TABLE employees
-ADD date_of_joining DATE;
+ALTER TABLE employees ADD date_of_joining DATE;
 
 DROP TABLE employees;
 

@@ -11,7 +11,7 @@ Exmaple Sarah creates a view for Finance, selecting only emp_id, name, and salar
 CREATE VIEW finance_view AS
 SELECT emp_id, name, salary
 FROM employees;
-Now, when Finance wants to check salaries, they can just query:
+Now, when Finance wants to check salaries, they can just query:         
 
 SELECT * FROM finance_view;
 

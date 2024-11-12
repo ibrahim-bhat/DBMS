@@ -12,3 +12,4 @@ CREATE INDEX idx_title ON books (title);  --creating index here
 Now, when someone searches for a book by title:
 
 SELECT * FROM books WHERE title = 'Pride and Prejudice';
+
