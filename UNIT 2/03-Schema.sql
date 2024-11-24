@@ -1,4 +1,4 @@
-A schema is a template that defines the structure, organization, and relationships of a database
+A schema is a template that defines the structure, organization, and relationships of a database.
 
 a schema is a logical container or structure within a database that organizes and groups database objects like tables, views, indexes, and stored procedures. It’s essentially a way to logically separate and organize database 
 objects for clarity, permissions, and management.

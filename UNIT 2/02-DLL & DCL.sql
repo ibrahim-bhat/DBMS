@@ -1,6 +1,6 @@
-DDL
+-- DDL
 Stands for Data Definition Language, and is used to define and manage the structure of a database. DDL commands include CREATE, ALTER, and DROP.
-DCL
+-- DCL
 Stands for Data Control Language, and is used to control access to data within a database. DCL commands include GRANT and REVOKE
 
 
@@ -24,7 +24,7 @@ DROP TABLE employees;
 
 TRUNCATE TABLE employees; --delete the data but not the table
 
-
+ 
     -- DCL
 
 GRANT: Provides specific privileges to users.

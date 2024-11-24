@@ -1,0 +1,48 @@
+### Let's Begin With: **Data on External Storage**
+
+---
+
+### **Definition:**
+Data on external storage refers to the way databases store large amounts of data on external storage devices like hard disks or SSDs, rather than keeping it in memory (RAM). This is necessary for managing large databases that cannot fit entirely in memory.
+
+---
+
+### **Key Points:**
+
+1. **Why External Storage?**
+   - RAM is limited and volatile (data is lost on power failure).
+   - External storage is non-volatile and can store massive amounts of data.
+
+2. **How Data is Stored?**
+   - **Blocks and Pages:** Data is stored in fixed-size blocks or pages on disks.
+   - **Sequential and Random Access:** Accessing data sequentially is faster than random access on a disk.
+
+3. **Structure of External Storage:**
+   - **Primary Storage:** RAM (fast but volatile).
+   - **Secondary Storage:** HDD, SSD (non-volatile and used for permanent storage).
+   - **Tertiary Storage:** Backup devices (e.g., tapes, optical disks).
+
+---
+
+### **Example:**
+
+Imagine you are working with a database of a university that stores student data. The RAM cannot hold the data of thousands of students at once, so the database system stores it on an external hard disk. When you query for a specific student, the system retrieves the required data from the disk into memory for processing.
+
+---
+
+### **Real-World Analogy:**
+
+Think of a library:
+- **RAM:** Your desk, where you can keep only a few books for immediate reference.
+- **External Storage (Disk):** The library shelves, where all books are stored.
+- When you need a book, you fetch it from the shelf (disk) and place it on your desk (RAM).
+
+---
+
+#### **In Exams:**
+- **Definition:** Data on external storage refers to how databases store large data on non-volatile devices like HDD or SSD for long-term use.
+- **Point to Remember:** It's essential for handling large databases that cannot fit in RAM.
+
+---
+
+Let me know when you're ready for the next topic: **File Organization and Indexing.** 😊

@@ -57,3 +57,4 @@ WHERE salary > (SELECT AVG(salary) FROM employees e2 WHERE e1.department = e2.de
 
 -- Query: A direct question to the database to get specific information.
 -- Subquery: A query within another query, helpful for performing complex searches or calculations.
+
