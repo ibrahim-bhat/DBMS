@@ -1,0 +1,72 @@
+### **Primary and Secondary Indexes**
+
+---
+
+#### **What is an Index?**
+An **index** is like a roadmap for finding data quickly in a database. It avoids searching the entire table row by row.
+
+---
+
+### **1. Primary Index:**
+- **Definition:** A primary index is created on a column that is the **primary key** of the table. It automatically arranges the table rows in the **physical order** of the key.
+- **Purpose:** Used to locate records directly and efficiently.
+- **One Per Table:** There can only be one primary index per table because it depends on the primary key.
+
+---
+
+#### **Example of Primary Index:**
+Imagine a **students** table:
+```sql
+CREATE TABLE students (
+    student_id INT PRIMARY KEY,
+    name VARCHAR(50),
+    age INT
+);
+```
+- Here, `student_id` is the **primary key**. The database automatically creates a **primary index** for it.
+
+**How it Works:**
+If you run:
+```sql
+SELECT * FROM students WHERE student_id = 101;
+```
+The primary index directly points to the location of `student_id = 101` without scanning the entire table.
+
+---
+
+### **2. Secondary Index:**
+- **Definition:** A secondary index is created on a column that is **not the primary key**. It’s an additional index to speed up queries on other columns.
+- **Purpose:** Used for faster lookups when querying non-primary key columns.
+- **Multiple Allowed:** A table can have multiple secondary indexes.
+
+---
+
+#### **Example of Secondary Index:**
+Suppose we often search by `name` in the **students** table:
+```sql
+CREATE INDEX idx_name ON students(name);
+```
+Now, if you run:
+```sql
+SELECT * FROM students WHERE name = 'Alice';
+```
+The secondary index on `name` makes the query faster.
+
+---
+
+### **Key Differences Between Primary and Secondary Index:**
+
+| **Aspect**               | **Primary Index**                              | **Secondary Index**                           |
+|--------------------------|-----------------------------------------------|----------------------------------------------|
+| **Based On**             | Primary key of the table.                     | Any column, even non-primary key columns.    |
+| **Purpose**              | Orders the table physically.                  | Provides quick access without changing order.|
+| **Number Per Table**     | Only one.                                     | Multiple allowed.                            |
+| **Creation**             | Automatically created for primary keys.       | Manually created by the user.                |
+
+---
+
+### **Analogy:**
+1. **Primary Index:** Like a **Table of Contents** in a book, which lists the chapters in order.
+2. **Secondary Index:** Like a **Glossary**, which helps you find specific terms without flipping through the entire book.
+
+---

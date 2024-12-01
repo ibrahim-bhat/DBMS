@@ -1,59 +1,53 @@
-### What is **Equivalence** in Databases?
+### **Equivalence in DBMS**
 
-In the context of databases, **equivalence** refers to two or more **sets of functional dependencies** (FDs) that essentially express the **same information** in different forms. In simpler terms, two sets of FDs are considered **equivalent** if they can derive the same results or consequences, even though they may look different at first.
+In **DBMS (Database Management System)**, **equivalence** refers to when two queries or expressions produce the **same result** despite being written differently. They might use different methods or operations, but the output remains identical.
 
-### In Simple Terms:
-Equivalence in databases means that two sets of **functional dependencies** (or even two **queries**) will produce the **same outcome**, even though they may look different. You can use one in place of the other without changing the data or the results.
+---
 
-### Equivalence of Functional Dependencies:
-Two sets of functional dependencies (FDs) are considered **equivalent** if each set can **infer the other**. This means that if you can use the functional dependencies in one set to **derive** the functional dependencies in the other set, then the two sets are **equivalent**.
+### **Types of Equivalence**
 
-For example:
+1. **Relational Algebra Equivalence:**
+   - Two relational algebra expressions give the same result when applied to the same database.
 
-Let’s say we have two sets of functional dependencies:
+2. **Query Equivalence:**
+   - Two SQL queries return the same set of records, even if written differently.
 
-- **Set 1**: 
-  1. **A → B**
-  2. **B → C**
+---
 
-- **Set 2**: 
-  1. **A → C**
-  2. **C → B**
+### **Example of Equivalence**
 
-Even though the two sets have different functional dependencies, they are **equivalent** because you can derive the functional dependencies of one set from the other.
+#### **Relational Algebra Equivalence:**
 
-### How Do We Check Equivalence?
-We can check if two sets of functional dependencies are equivalent by using the following principles:
-1. **Deriving each FD**: Try to use one set of FDs to derive the FDs in the other set. If this works, then the sets are equivalent.
-2. **Closure method**: For each set, compute the **closure** of the functional dependencies and see if they lead to the same result.
+Expression 1:  
+Select students with age > 20, then project their names:  
+\[ \pi_{name}(\sigma_{age > 20}(Students)) \]
 
-### Example of Functional Dependency Equivalence:
+Expression 2:  
+Project the names of all students, then select where age > 20:  
+\[ \sigma_{age > 20}(\pi_{name, age}(Students)) \]
 
-Consider the following two sets of functional dependencies:
+Both produce the same result: names of students older than 20.
 
-- **Set 1**:
-  1. **A → B**
-  2. **B → C**
+---
 
-- **Set 2**:
-  1. **A → C**
-  2. **B → A**
+#### **SQL Query Equivalence:**
 
-#### Checking Equivalence:
+Query 1:  
+SELECT name FROM students WHERE age > 20;
 
-- From **Set 1**, we have **A → B** and **B → C**.
-  - **A → B** tells us that if we know **A**, we can find **B**.
-  - **B → C** tells us that if we know **B**, we can find **C**.
-  - Using **transitivity**, **A → C** can be derived (A → B → C).
+Query 2:  
+SELECT DISTINCT name FROM students WHERE age > 20;
+-- the DISTINCT keyword is used to eliminate duplicate rows from the query result. It ensures that each row in the output is unique.
 
-- Now, if we check **Set 2**: 
-  1. **A → C** is already given.
-  2. **B → A** tells us that if we know **B**, we can find **A**.
+If the `name` column has unique values, both queries give the **same output**, so they are **equivalent**.
 
-By using **Set 2**, we can derive **A → C** and **B → C** (using **A → B** and **B → C**), which matches the **Set 1** results.
+---
 
-Hence, **Set 1** and **Set 2** are **equivalent** because both sets can be used to derive the same information.
+### **Easy Analogy**
 
-### Summary:
-- **Equivalence** means two sets of dependencies or queries give the same result, even if they are written differently.
-- Checking for equivalence involves ensuring that you can derive the dependencies of one set from the other.
+Equivalence in DBMS is like solving a math problem in two different ways but getting the same answer. For example:  
+- \( 2 + 3 = 5 \)  
+- \( 1 + 4 = 5 \)  
+Both methods are different but equivalent because they result in 5.
+
+---

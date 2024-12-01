@@ -12,7 +12,7 @@ This query will return only the rows where the position is "Manager." It’s str
 
 
 
-  2. Subqueries
+  2. Subqueries (nested query)
 A subquery is a query within another query. It’s like asking one question inside another question to get more specific information.
 
 Why Use a Subquery? Sometimes, you need information from one query to complete another query. A subquery helps you do this by allowing you to nest one query inside another.

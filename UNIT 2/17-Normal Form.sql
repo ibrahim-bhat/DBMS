@@ -6,7 +6,7 @@
 
 ### 1. **First Normal Form (1NF)**
 - **Definition**: A table is in **1NF** if:
-  1. Each column contains only **atomic (indivisible)** values.
+  1. Each column contains only **atomic (indivisible)** values.--single
   2. There are **no repeating groups** or arrays.
 - **Goal**: Eliminate duplicate groups and ensure every cell holds a single, indivisible value.
 

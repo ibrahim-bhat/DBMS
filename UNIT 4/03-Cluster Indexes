@@ -1,0 +1,93 @@
+### **Cluster Indexes**
+
+---
+
+#### **Definition:**
+A **Cluster Index** determines the physical order of data in a table. It groups similar or related rows together on the storage disk based on the indexed column(s). 
+
+---
+
+### **Key Features:**
+1. **One per Table:** A table can only have one cluster index because it defines the physical storage order.
+2. **Speeds Up Range Queries:** Since related data is stored together, range-based searches are faster.
+3. **Impacts Physical Storage:** The actual arrangement of rows in the table follows the order of the cluster index.
+
+---
+
+### **Example:**
+
+#### Without Cluster Index:
+- Imagine a table storing **students' scores**, where records are randomly scattered:
+  ```
+  ID    Name     Score
+  4     Alice    85
+  1     Bob      90
+  3     Clara    80
+  2     David    75
+  ```
+
+#### With Cluster Index on ID:
+- The data is physically ordered based on the **ID** column:
+  ```
+  ID    Name     Score
+  1     Bob      90
+  2     David    75
+  3     Clara    80
+  4     Alice    85
+  ```
+
+---
+
+### **Advantages of Cluster Index:**
+1. **Efficient Range Queries:**
+   - Queries like `SELECT * FROM students WHERE ID BETWEEN 2 AND 4;` are faster because data is stored sequentially.
+   
+2. **Reduces I/O Cost:**
+   - Data is grouped together, minimizing the need to read from multiple disk locations.
+
+3. **Improves Locality of Reference:**
+   - Accessing related data (e.g., orders of the same customer) becomes faster.
+
+---
+
+### **Disadvantages of Cluster Index:**
+1. **Slower Updates:**
+   - Insertions, deletions, and updates may require reordering the table, which is time-consuming.
+   
+2. **One Per Table:**
+   - A table can only have one clustered index, which might not suit all queries.
+
+---
+
+### **Syntax to Create a Cluster Index:**
+1. **On an Existing Table:**
+   ```sql
+   CREATE CLUSTERED INDEX idx_students_id ON students(ID);
+   ```
+
+2. **While Creating a Table:**
+   ```sql
+   CREATE TABLE students (
+       ID INT PRIMARY KEY CLUSTERED,
+       Name VARCHAR(50),
+       Score INT
+   );
+   ```
+
+---
+
+### **Cluster Index vs Non-Clustered Index:**
+
+| **Aspect**                | **Cluster Index**                                 | **Non-Clustered Index**                        |
+|---------------------------|--------------------------------------------------|-----------------------------------------------|
+| **Physical Data Order**    | Data is physically arranged based on the index.  | Does not affect the physical arrangement.     |
+| **Number Per Table**       | Only one.                                        | Multiple non-clustered indexes allowed.       |
+| **Performance**            | Faster for range queries.                        | Slower for range queries but still efficient. |
+
+---
+
+### **Real-World Analogy:**
+- **Cluster Index:** Books in a library shelf are physically arranged by **subject** (e.g., all "Science" books are together).
+- **Non-Clustered Index:** The catalog card shows where a book is located but doesn't affect how the books are placed on the shelf.
+
+---

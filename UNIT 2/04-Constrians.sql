@@ -5,7 +5,7 @@ Constraints are rules applied to columns in a database table to enforce data int
 Common Types of Constraints:
 
 PRIMARY KEY: Ensures that each row in a table has a unique, non-null identifier. A table can only have one primary key, but it can be composed of multiple columns.
-CREATE TABLE employees (
+CREATE TABLE emplzoyees (
     emp_id INT PRIMARY KEY,  -- like enoroll number is unique for every one
     name VARCHAR(100)
 );

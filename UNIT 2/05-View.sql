@@ -38,3 +38,15 @@ GROUP BY department;
 Now, the executive team can simply query:
 
 SELECT * FROM department_summary;
+
+
+
+
+-- 1 Updated view
+An "updated view" in SQL refers to a view that has been modified using the "ALTER VIEW" statement, essentially changing the underlying query that defines the view, thus presenting a different set of data when accessed; its like changing the filter or calculation on a virtual table without actually altering the base data in the database tables it draws from  , updating a view in SQL does not directly change the actual data in the underlying tables
+
+
+-- 2 Read only view
+A "read-only view" in SQL is a virtual table created using a SELECT statement that only allows users to view data from the underlying base tables, preventing them from performing any modifications like inserting, updating, or deleting rows within the view itself; essentially, it provides access to data without the ability to change it. 
+
+
